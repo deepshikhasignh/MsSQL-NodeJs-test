@@ -14,8 +14,8 @@ app.configure ->
 	app.set 'views', 'views'
 
 app.get '/', (req, res) ->
-	Message = require './Message'
-	Message.getText (text) ->
+	msg = require './Message'
+	msg.getText (text) ->
 		message = text
 		res.render 'index.jade', message: message
 

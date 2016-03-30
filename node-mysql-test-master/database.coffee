@@ -1,19 +1,19 @@
 mysql = require 'mysql'
 ini = require 'node-ini'
-
+util = require 'util'
 # Configuration file
 inipath = './config.ini'
 cfg = ini.parseSync inipath
 
 # Database connection
 db = cfg.database
-dbname = db.dbname 
+dbname = 'TestNode'
 
 connection = mysql.createConnection
-	host: db.host
-	user: db.username
-	password: db.password
-	database: dbname
+	host: '192.168.200.81'
+	user: 'test'
+	password: 'test'
+	database: 'TestNode'
 
 connection.connect()
 
